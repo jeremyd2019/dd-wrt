@@ -1,6 +1,7 @@
 minidlna-configure:
 	cd minidlna && make clean
 	cd minidlna && make distclean
+	mkdir -p minidlna/lib
 	cd minidlna && make
 
 minidlna:

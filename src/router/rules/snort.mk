@@ -1,4 +1,4 @@
-snort-configure: daq-configure pcre-configure daq pcre
+snort-configure: daq-configure pcre-configure daq pcre libnet
 
 	export ac_cv_func_malloc_0_nonnull=yes  ; \
 	export lt_sys_lib_dlsearch_path_spec="$(ARCH)-uclibc" ; \

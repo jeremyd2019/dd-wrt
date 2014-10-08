@@ -1,23 +1,28 @@
 ifeq ($(CONFIG_SAMBA3),y)
   JFLAGS = -I$(TOP)/jansson/src -L$(TOP)/jansson/src/.libs -ljansson -lm
+  JANSSON = jansson
 endif
 ifeq ($(CONFIG_FTP),y)
   JFLAGS = -I$(TOP)/jansson/src -L$(TOP)/jansson/src/.libs -ljansson -lm
+  JANSSON = jansson
 endif
 ifeq ($(CONFIG_MINIDLNA),y)
   JFLAGS = -I$(TOP)/jansson/src -L$(TOP)/jansson/src/.libs -ljansson -lm
+  JANSSON = jansson
 endif
 
 ifeq ($(CONFIG_TIEXTRA1),y)
   JFLAGS = -I$(TOP)/jansson/src -I$(TOP)/private/telkom -L$(TOP)/jansson/src/.libs -ljansson -lm
+  JANSSON = jansson
 endif
 ifeq ($(CONFIG_TIEXTRA2),y)
   JFLAGS = -I$(TOP)/jansson/src -I$(TOP)/private/telkom -L$(TOP)/jansson/src/.libs -ljansson -lm
+  JANSSON = jansson
 endif
 
 
 
-dhcpv6:
+dhcpv6: libutils $(JANSSON)
 	CC="$(CC)" \
 	CFLAGS="$(COPTS)  $(MIPS16_OPT) $(JFLAGS) -DNEED_PRINTF -D_GNU_SOURCE -I$(TOP)/shared -DUSE_DHCP6SRV -ffunction-sections -fdata-sections -Wl,--gc-sections" \
 	CPPFLAGS="$(COPTS) $(MIPS16_OPT) $(JFLAGS) -DNEED_PRINTF -D_GNU_SOURCE -I$(TOP)/shared  -DUSE_DHCP6SRV -ffunction-sections -fdata-sections -Wl,--gc-sections" \
@@ -32,7 +37,7 @@ dhcpv6-install:
 dhcpv6-clean:
 	$(MAKE) -C dhcpv6 clean
 
-dhcpv6-configure:
+dhcpv6-configure: libutils $(JANSSON)
 
 
 	cd dhcpv6 && ./configure --prefix= --with-localdbdir=/var --with-sysconfdir=/etc \

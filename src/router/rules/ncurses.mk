@@ -1,4 +1,4 @@
-ncurses-configure:
+ncurses/Makefile ncurses-configure:
 	cd ncurses && ./configure --host=$(ARCH)-linux-uclibc --with-shared CFLAGS="$(COPTS) $(MIPS16_OPT) -DNEED_PRINTF -fPIC" \
 		--enable-echo \
 		--libdir=/usr/lib \
@@ -19,7 +19,8 @@ ncurses-configure:
 ncurses-clean:
 	make -j 4 -C ncurses clean
 
-ncurses:
+
+ncurses: ncurses/Makefile
 	make -j 4 -C ncurses
 
 ncurses-install:

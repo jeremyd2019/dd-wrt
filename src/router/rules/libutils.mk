@@ -15,7 +15,10 @@ endif
 libutils-clean:
 	make -C libutils clean
 
-libutils: nvram $(TINY)  $(JANSSON)
+shared/revision.h:
+	echo "#define SVN_REVISION \""`git rev-parse HEAD`"\"" > shared/revision.h
+
+libutils: shared/revision.h nvram $(TINY)  $(JANSSON)
 	make -C libutils
 
 libutils-install:
