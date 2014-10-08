@@ -9,7 +9,7 @@ all:
 	@echo Nothing to do
 	
 install:
-	install -m 755 $(SCRIPTS) $(DESTDIR)$(sbindir)
+	install -m 755 $(SCRIPTS) $(INSTALLDIR)$(sbindir)
 
 uninstall:
 	-rm -f $(DESTDIR)$(sbindir)/airmon-ng
