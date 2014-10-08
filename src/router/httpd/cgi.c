@@ -52,7 +52,7 @@ char *get_cgi(char *name)
 {
 	ENTRY e, *ep;
 
-#if defined(__UCLIBC__) || defined(__GLIBC__) 
+#if 0 && (defined(__UCLIBC__) || defined(__GLIBC__))
 	if (!htab.table)
 		return NULL;
 #else
@@ -71,7 +71,7 @@ void set_cgi(char *name, char *value)
 
 	//cprintf("\nIn set_cgi(), name = %s, value = %s\n", name, value);
 
-#if defined(__UCLIBC__) || defined(__GLIBC__)
+#if 0 && (defined(__UCLIBC__) || defined(__GLIBC__))
 	if (!htab.table)
 		return NULL;
 #else

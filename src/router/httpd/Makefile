@@ -47,7 +47,7 @@ COPTS += $(MIPS16_OPT) -D_GNU_SOURCE
 BCFLAGS	= $(COPTS)  -fPIC -DMEMLEAK_OVERRIDE
 
 ifeq ($(CONFIG_80211AC),y)
-BCFLAGS	+= -I. -I$(LINUXDIR)/brcm/$(ARCH)/include -Wall
+BCFLAGS	+= -I. -I$(LINUXDIR)/brcm/$(ARCH)/include -Wall -DNEED_PRINTF
 endif
 
 ifeq ($(CONFIG_MSSID),y)

@@ -38,7 +38,7 @@
    files, it is simpler to just do this in the source for each such file.  */
 
 #include <stdio.h>              /* Random thing to get __GNU_LIBRARY__.  */
-#if !defined _LIBC && defined __GNU_LIBRARY__ && __GNU_LIBRARY__ > 1
+#if !defined _LIBC && defined __GNU_LIBRARY__ && __GNU_LIBRARY__ > 1 && 0
 # include <gnu-versions.h>
 # if _GNU_OBSTACK_INTERFACE_VERSION == OBSTACK_INTERFACE_VERSION
 #  define ELIDE_CODE
