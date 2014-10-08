@@ -13,7 +13,7 @@ if [[ ${1} = "-r" ]]; then
 fi
 
 
-CC="mipsel-linux-uclibc-gcc" CFLAGS="-pipe -Os -fomit-frame-pointer -mips32 -mtune=mips32 -funit-at-a-time" \
+CC="ccache arm-linux-uclibc-gcc" CFLAGS="-Os -pipe -march=armv7-a -mcpu=cortex-a9 -mtune=cortex-a9  -msoft-float -mfloat-abi=soft -fno-caller-saves " \
 	glib_cv_prog_cc_ansi_proto=no \
 	ac_cv_sizeof_char=1 \
 	ac_cv_sizeof_short=2 \
@@ -36,5 +36,5 @@ CC="mipsel-linux-uclibc-gcc" CFLAGS="-pipe -Os -fomit-frame-pointer -mips32 -mtu
 	glib_cv_sizeof_gmutex=24 \
 	glib_cv_byte_contents_gmutex="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" \
 	./configure --prefix=${PWD}/../glib-1.2.10-install \
-	--cache-file=config.cache --host=mipsel-linux
+	--cache-file=config.cache --host=arm --target=arm-linux
 
