@@ -57,6 +57,9 @@ kmconf:
 koldconf: $(LINUXDIR)/.config
 	$(MAKE) -C $(LINUXDIR) oldconfig
 
+kprep: $(LINUXDIR)/.config
+	$(MAKE) -C $(LINUXDIR) prepare
+
 # Convenience
 config: conf
 
