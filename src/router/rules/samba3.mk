@@ -51,6 +51,9 @@ CONFIGURE_ARGS_SMB += \
 	--without-libsmbclient \
 	--without-libsmbsharemodes \
 	--without-libaddns \
+	--disable-external-libtalloc \
+	--disable-external-libtevent \
+	--disable-external-libtdb \
 	--with-shared-modules=pdb_tdbsam,pdb_wbc_sam,idmap_nss,nss_info_template,auth_winbind,auth_wbc,auth_domain
 
 samba3-preconfigure:
