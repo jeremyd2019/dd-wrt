@@ -17,6 +17,7 @@ asterisk-configure:
 	--without-nbs \
 	--with-ncurses="$(TOP)/ncurses" \
 	--with-crypto="$(TOP)/openssl" \
+	--with-libedit=internal \
 	--without-netsnmp \
 	--without-newt \
 	--without-odbc \
