@@ -58,6 +58,8 @@ ipeth-configure:
 			-DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=$(STAGING_DIR) \
 			-DCMAKE_STRIP=: \
 			-DCMAKE_INSTALL_PREFIX=/usr \
+			-DENABLE_SWIG=NO \
+			-DENABLE_CYTHON=NO \
 			-DLIBXML2_INCLUDE_DIR=$(TOP)/ipeth/libxml2/include \
 			-DLIBXML2_LIBRARIES=$(TOP)/ipeth/libxml2/.libs/libxml2.a \
 		. \
